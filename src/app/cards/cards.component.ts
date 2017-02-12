@@ -27,12 +27,10 @@ export class CardsComponent implements OnInit {
        console.log('QueryString: ' + params['name']);
      })
   }
-
   updateCards(type)
   {
     this.router.navigateByUrl('/cards/' + type);
   }
-
   //QueryString傳參數 程式寫法
   goQueryString() {
      this.router.navigate(['/cards', 100], {

@@ -1,6 +1,4 @@
-import { FlotComponent } from './flot/flot.component';
-import { RickshawComponent } from './rickshaw/rickshaw.component';
-import { RadialComponent } from './radial/radial.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { fallbackRoute } from './shared/fallback-route';
@@ -31,6 +29,8 @@ import {CardsComponent} from './cards/cards.component'
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards/:type',     component: CardsComponent },
+  //變module
+  /*
   { path:'charts/:username',
     children:[
       { path:'',redirectTo:'flot',pathMatch:'full'},
@@ -39,6 +39,7 @@ const routes: Routes = [
       { path:'rickshaw',component:RickshawComponent}
     ]
   },
+  */
   fallbackRoute
 ];
 @NgModule({
