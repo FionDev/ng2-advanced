@@ -1,6 +1,9 @@
-
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+
+//import { Routes, RouterModule } from '@angular/router';
+//延遲載入
+import { PreloadAllModules, Route,  Routes,  RouterModule} from '@angular/router';
+
 import { fallbackRoute } from './shared/fallback-route';
 // step 1 test
 /*
@@ -29,22 +32,18 @@ import {CardsComponent} from './cards/cards.component'
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards/:type',     component: CardsComponent },
-  //變module
-  /*
-  { path:'charts/:username',
-    children:[
-      { path:'',redirectTo:'flot',pathMatch:'full'},
-      { path:'flot',component:FlotComponent},
-      { path:'radial', component:RadialComponent},
-      { path:'rickshaw',component:RickshawComponent}
-    ]
-  },
-  */
+
+  { path:'charts/:username',loadChildren:'./charts/charts.module#ChartsModule'},
+
   fallbackRoute
 ];
 @NgModule({
   //imports: [RouterModule.forRoot(routes,{useHash:true})]
-  imports: [RouterModule.forRoot(routes,{enableTracing:false})],
+  //imports: [RouterModule.forRoot(routes,{enableTracing:false})],
+  imports: [RouterModule.forRoot(routes, {
+     enableTracing: false,
+     preloadingStrategy: PreloadAllModules
+   })],
   exports: [RouterModule],
   providers: []
 })

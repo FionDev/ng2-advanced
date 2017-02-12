@@ -6,7 +6,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ChartsModule } from './charts/charts.module';
+//延遲載入 所以必須砍掉
+//import { ChartsModule } from './charts/charts.module';
 
 //Component
 import { AppComponent } from './app.component';
@@ -29,7 +30,8 @@ import { CardsComponent } from './cards/cards.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartsModule,
+    //延遲載入 所以必須砍掉
+    //ChartsModule,
     AppRoutingModule
 
   ],
