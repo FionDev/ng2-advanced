@@ -4,9 +4,9 @@
 <hr>
 
 <ul>
-  <li><a [routerLink]="['/']">Home</a></li>
-  <li><a [routerLink]="['/page2']">Page2</a></li>
-  <li><a routerLink="/page2">Page2</a></li>
+  <li><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+  <li><a [routerLink]="['/page2']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Page2</a></li>
+  <li><a routerLink="/page2" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Page2</a></li>
 </ul>
 
 <router-outlet></router-outlet>
