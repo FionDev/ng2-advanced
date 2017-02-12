@@ -6,12 +6,17 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo:'/layout',pathMatch:'full'
+  },
+  {
+    path: 'layout',
     component:LayoutComponent
   },
   {
     path: 'page2',
     component:Page2Component
-  }
+  },
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
