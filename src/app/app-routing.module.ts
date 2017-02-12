@@ -3,6 +3,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { fallbackRoute } from './shared/fallback-route';
+
+
+
 const routes: Routes = [
   {
     path: '',
@@ -14,9 +18,11 @@ const routes: Routes = [
   },
   {
     path: 'page2',
-    component:Page2Component
+    component:Page2Component,
+    data:{pageTitle:'Page Title'}
   },
-  { path: '**', redirectTo: '/', pathMatch: 'full' }
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  fallbackRoute
 ];
 
 @NgModule({
