@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'cards/:type',     component: CardsComponent },
   { path:'charts/:username',
     children:[
-      //{ path:'',redirectTo:'flot',pathMatch:'full'},
+      { path:'',redirectTo:'flot',pathMatch:'full'},
       { path:'flot',component:FlotComponent},
       { path:'radial', component:RadialComponent},
       { path:'rickshaw',component:RickshawComponent}
@@ -43,7 +43,7 @@ const routes: Routes = [
 ];
 @NgModule({
   //imports: [RouterModule.forRoot(routes,{useHash:true})]
-  imports: [RouterModule.forRoot(routes,{enableTracing:true})],
+  imports: [RouterModule.forRoot(routes,{enableTracing:false})],
   exports: [RouterModule],
   providers: []
 })
