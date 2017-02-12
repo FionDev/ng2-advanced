@@ -31,7 +31,7 @@ import {CardsComponent} from './cards/cards.component'
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards/:type',     component: CardsComponent },
-  { path:'charts',
+  { path:'charts/:username',
     children:[
       //{ path:'',redirectTo:'flot',pathMatch:'full'},
       { path:'flot',component:FlotComponent},
