@@ -26,7 +26,7 @@
 <div formArrayName="group1">
           <span class="help-block">示範動態新增表單控制項的方法(練習透過 FormArray 搭配 *ngFor 產生動態表單結構)</span>
           <fieldset *ngFor="let item of form.controls.group1.controls; let i = index">
-            <div class="form-group">
+            <div class="form-group" [ngClass]="{'has-error': getFieldInvalid(i, 'group1.')}">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
               <div class="col-sm-10">
                 <input id="input-id-1" type="text" class="form-control" [formControlName]="i">
