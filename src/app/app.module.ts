@@ -16,6 +16,7 @@ import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormComponent } from './form/form.component';
     Page2Component,
     DashboardComponent,
     CardsComponent,
-    FormComponent
+    FormComponent,
+    ReactiveformComponent
 
   ],
   imports: [
