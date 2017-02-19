@@ -5,6 +5,7 @@ import {HostListener, HostBinding,  Directive} from '@angular/core';
 })
 export class ApplyCounterDirective {
 
+  //
   @HostBinding('class.bg-success')
   bgClass = false;
 

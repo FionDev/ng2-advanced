@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
+import { InputRouteGuard } from './input-route-guard';
+import { LoginRouteGuard } from './login-route-guard';
 //延遲載入 所以必須砍掉
 //import { ChartsModule } from './charts/charts.module';
 
@@ -19,6 +21,7 @@ import { FormComponent } from './form/form.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { SkyComponent } from './sky/sky.component';
 import { ApplyCounterDirective } from './apply-counter.directive';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -31,7 +34,9 @@ import { ApplyCounterDirective } from './apply-counter.directive';
     FormComponent,
     ReactiveformComponent,
     SkyComponent,
-    ApplyCounterDirective
+    ApplyCounterDirective,
+    LoginComponent,
+    LayoutComponent
 
   ],
   imports: [
@@ -44,7 +49,8 @@ import { ApplyCounterDirective } from './apply-counter.directive';
     AppRoutingModule
 
   ],
-  providers: [],
+  //login檢查
+  providers: [LoginRouteGuard, InputRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

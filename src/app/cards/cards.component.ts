@@ -1,4 +1,4 @@
-import {ViewChildren, QueryList,ViewChild,Component, OnInit } from '@angular/core';
+import {ViewEncapsulation,ViewChildren, QueryList,ViewChild,Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
 //加入子component
 import { SkyComponent } from './../sky/sky.component';
