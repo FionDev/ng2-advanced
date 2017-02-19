@@ -1,10 +1,12 @@
  <section>
           <div class="container-fluid">
             <h5 class="mt0">Classic form controls and custom variants</h5>
-            <p class="mb-lg">{{f.value | json}}</p>
+            <p class="mb-lg">{{f.value| json}}</p>
+            <p class="mb-lg">debug name invalid:{{debug(f.controls.name?.invalid)}}</p>
+
             <div class="card">
               <div class="card-body">
-                <form method="get" action="/" class="form-horizontal" #f="ngForm">
+                <form method="get" action="/" class="form-horizontal" #f="ngForm" novalidate>
                   <fieldset>
                     <div class="form-group" [ngClass]="{'has-error':name.invalid && name.dirty}">
                       <label class="col-sm-2 control-label">Rounded Corners</label>
@@ -19,22 +21,7 @@
                       </div>
                     </div>
                   </fieldset>
-                  <fieldset>
-                    <div class="form-group">
-                      <label class="col-sm-2 control-label">With help</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <div class="form-group">
-                      <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
-                      <div class="col-sm-10">
-                        <input id="input-id-1" type="text" class="form-control">
-                      </div>
-                    </div>
-                  </fieldset>
+
                   <fieldset>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Password</label>

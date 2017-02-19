@@ -11,5 +11,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  debug(obj) {
+     console.dir(obj);
+   }
 }
