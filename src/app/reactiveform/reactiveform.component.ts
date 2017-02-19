@@ -14,6 +14,7 @@ export class ReactiveformComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.form.addControl('email', this.fb.control('default@example.com', Validators.required));
   }
  getFieldInvalid(fieldName) {
      return this.form.controls[fieldName].invalid;
