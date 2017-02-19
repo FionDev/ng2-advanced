@@ -15,6 +15,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CardsComponent } from './cards/cards.component';
     LayoutComponent,
     Page2Component,
     DashboardComponent,
-    CardsComponent
+    CardsComponent,
+    FormComponent
 
   ],
   imports: [
