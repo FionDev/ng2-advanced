@@ -1,4 +1,4 @@
-export const initDashboard = function initDashboard() {
+export function initDashboard() {
 
     if (!$.fn.plot || !$.fn.easyPieChart) return;
 
