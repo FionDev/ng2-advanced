@@ -52,7 +52,14 @@
                 </div>
                 <div class="row" (click)="checkSkyInputDirty()">
 
-                 <app-sky name="My Sky"></app-sky>
+                <app-sky name="My Sky" titleimg="assets/img/pic5.jpg">
+                         <button type="button" (click)="incCounter()" #btn
+                                 class="btn-raised btn btn-primary btn-circle btn-lg">
+                                 {{ counter }}
+                         </button>
+                   </app-sky>
+
+                  <app-sky name="My Sky" titleimg="assets/img/pic4.jpg"></app-sky>
 
 
                   <div class="col-sm-6 col-xs-12">

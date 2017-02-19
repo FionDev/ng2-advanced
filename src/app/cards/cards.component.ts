@@ -1,4 +1,4 @@
-import {ViewChild,Component, OnInit } from '@angular/core';
+import {ViewChildren, QueryList,ViewChild,Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
 //加入子component
 import { SkyComponent } from './../sky/sky.component';
@@ -7,13 +7,19 @@ import { SkyComponent } from './../sky/sky.component';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements OnInit {
+export class CardsComponent implements OnInit
+{
 
   type:string;
   name:string;
+  counter = 10;
 
+  //子元件第一個
   @ViewChild(SkyComponent)
   sky: SkyComponent;
+  //子元件下所有
+  @ViewChildren(SkyComponent)
+   skies: QueryList<SkyComponent>;
 
   constructor(private router:Router,private route:ActivatedRoute) { }
 
@@ -57,12 +63,23 @@ export class CardsComponent implements OnInit {
 
    //在事件初始化後才執行
    ngAfterViewInit() {
-     //抓欄位值
+     //抓欄位值 子元件只有一個
      console.log(this.sky.name);
+     //子元件不只1個
+       this.skies.forEach(x => {
+      console.log(x.titleimg);
+    });
    }
+
+
+
+   incCounter() {
+    this.counter++;
+  }
 
    checkSkyInputDirty() {
      //抓子component中元件的狀態
      console.log(this.sky.input.dirty);
    }
 }
+
