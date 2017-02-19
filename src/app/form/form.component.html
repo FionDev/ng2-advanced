@@ -11,7 +11,9 @@
                     <div class="form-group" [ngClass]="{'has-error':name.invalid && name.dirty}">
                       <label class="col-sm-2 control-label">Rounded Corners</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control rounded" name="name"  required minlength="3" required ngModel #name="ngModel">
+                        <input type="text" class="form-control rounded" name="name"  required minlength="3" required
+                         [(ngModel)]="data.name"
+                        #name="ngModel">
                         <pre>errors: {{ name.errors | json }}</pre>
                         <pre>touched:{{name.touched}}</pre>
                         <pre>untouched:{{name.untouched}}</pre>
@@ -26,7 +28,9 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">With help</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control"  ngModel name="sub1" #sub1 ><span class="help-block"></span>
+                        <input type="text" class="form-control"
+                       [(ngModel)]="data.group1.sub1"
+                        name="sub1" #sub1 ><span class="help-block"></span>
                       </div>
                     </div>
                   </fieldset>
@@ -34,7 +38,9 @@
                     <div class="form-group">
                       <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
                       <div class="col-sm-10">
-                        <input id="input-id-1" type="text" class="form-control" ngModel name="sub2" [required]="!!sub1.value">
+                        <input id="input-id-1" type="text" class="form-control"
+                        [(ngModel)]="data.group1.sub2"
+                        name="sub2" [required]="!!sub1.value">
                       </div>
                     </div>
 
