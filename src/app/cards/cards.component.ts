@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {ViewChild,Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
-
+//加入子component
+import { SkyComponent } from './../sky/sky.component';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -10,6 +11,10 @@ export class CardsComponent implements OnInit {
 
   type:string;
   name:string;
+
+  @ViewChild(SkyComponent)
+  sky: SkyComponent;
+
   constructor(private router:Router,private route:ActivatedRoute) { }
 
   //只有在創建時會執行一次
@@ -27,6 +32,9 @@ export class CardsComponent implements OnInit {
        console.log('QueryString: ' + params['name']);
      })
   }
+
+
+
   updateCards(type)
   {
     this.router.navigateByUrl('/cards/' + type);
@@ -44,5 +52,17 @@ export class CardsComponent implements OnInit {
      this.router.navigate(['/cards', 100, {
          name: 'Matrix-by-Code',
        }]);
+   }
+
+
+   //在事件初始化後才執行
+   ngAfterViewInit() {
+     //抓欄位值
+     console.log(this.sky.name);
+   }
+
+   checkSkyInputDirty() {
+     //抓子component中元件的狀態
+     console.log(this.sky.input.dirty);
    }
 }
